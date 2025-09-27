@@ -1,8 +1,13 @@
 import React from 'react'
+import BlogPage from './pages/BlogPage/BlogPage'
+import MaketPage from './pages/MaketPage/MaketPage'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <BlogPage />
+      <MaketPage />
+    </div>
   )
 }
 
