@@ -1,0 +1,71 @@
+import { FcGoogle } from "react-icons/fc";
+import { FaApple } from "react-icons/fa";
+import Button from "../../components/ui/Button";
+
+const SignUpPage = () => {
+  return (
+    <div className="flex min-h-screen">
+
+      <div className="hidden md:flex w-120 h-[100vh] ">
+        <img
+          src="/signup-bg.png"
+          alt="Sign up background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+  
+      <div className="flex w-full md:w-1/2 items-center justify-center bg-white ml-[120px]">
+        <div className="max-w-md w-full px-6 py-12">
+
+          <div className="flex justify-center mb-10">
+            <img src="/logo.svg" alt="Logo" className="w-16 h-16" />
+          </div>
+
+          <h2 className="text-3xl font-bold text-center mb-4">Sign up</h2>
+          <p className="text-gray-500 text-center mb-10">
+            Use Your OpenID to Sign up
+          </p>
+
+         
+          <div className="flex gap-4 justify-center mb-6 ">
+            <Button className="flex  border-gray-300  items-center gap-2 border-2 rounded-4xl py-3 w-1/2 justify-center">
+              <FcGoogle className="w-[30px] h-[35px] mt-[-3px]" />
+              Google
+            </Button>
+            <Button className="flex border-gray-300 items-center gap-2 border-2 rounded-4xl w-1/2 justify-center">
+              <FaApple className="w-[30px] h-[35px] mt-[-5px]"/>
+              Apple ID
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-2 mb-8 ">
+            {/* <hr className="flex items-center " /> */}
+            <span className="m-auto text-sm text-gray-300">Or continue with email</span>
+            {/* <hr className="flex items-center" /> */}
+          </div>
+
+          
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="w-full border rounded-4xl text-gray-500 px-4 py-3 mb-4 focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+
+          <Button className="w-[120px] flex text-center justify-center m-auto bg-green-500 text-white py-3 rounded-4xl hover:bg-green-600">
+            Sign up
+          </Button>
+
+          <p className="text-center text-sm text-gray-500  mt-6">
+            Already have an account?{" "}
+            <a href="/signin" className="text-green-600 font-medium">
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SignUpPage;
