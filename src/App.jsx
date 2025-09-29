@@ -1,8 +1,11 @@
 import React from 'react'
+import ContactPage from './pages/ContactPage/ContactPage'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+        <ContactPage />
+    </div>
   )
 }
 
