@@ -1,14 +1,12 @@
-import React from 'react'
-import BlogPage from './pages/BlogPage/BlogPage'
-import MaketPage from './pages/MaketPage/MaketPage'
+import React from "react";
+import BlogPage from "./pages/BlogPage/BlogPage";
 
 const App = () => {
   return (
     <div>
       <BlogPage />
-      <MaketPage />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

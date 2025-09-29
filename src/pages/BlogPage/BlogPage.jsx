@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import MaketPage from "./MaketPage";
 
 const BlogPage = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filters = ["All", "Tips and Tricks", "Exploring", "Off Topic", "Travel", "How To"];
+
   return (
     <div className="font-sans text-gray-900 px-4 sm:px-6 md:px-16 lg:px-32 bg-gray-50 min-h-screen">
       <section className="text-center my-20">
@@ -35,13 +40,14 @@ const BlogPage = () => {
         </div>
       </div>
 
-      {/* FILTERS & SEARCH */}
       <div className="flex flex-col sm:flex-row sm:justify-between items-center mt-14 gap-6 flex-wrap">
         <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
-          {["All", "Tips and Tricks", "Exploring", "Off Topic", "Travel", "How To"].map((tag, idx) => (
+          {filters.map((tag, idx) => (
             <button
               key={idx}
-              className="px-5 py-1.5 sm:px-6 sm:py-2 rounded-full text-sm sm:text-base text-[#777E90] hover:bg-[#23262F] hover:text-white transition"
+              onClick={() => setActiveFilter(tag)}
+              className={`px-5 py-1.5 sm:px-6 sm:py-2 rounded-full text-sm sm:text-base transition 
+                ${activeFilter === tag ? "bg-[#23262F] text-white" : "text-[#777E90] hover:bg-[#23262F] hover:text-white"}`}
             >
               {tag}
             </button>
@@ -57,6 +63,8 @@ const BlogPage = () => {
           />
         </div>
       </div>
+
+      <MaketPage activeFilter={activeFilter} />
     </div>
   );
 };
