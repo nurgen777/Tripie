@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { FaRegUser, FaRegCalendarAlt } from "react-icons/fa";
 
@@ -46,7 +44,7 @@ const posts = [
   },
   {
     id: 5,
-    category: "Exploring",
+    category: "Travel",
     image: "/led.png",
     title: "Convergent and divergent plate margins",
     author: "Isabelle O’Conner",
@@ -56,7 +54,7 @@ const posts = [
   },
   {
     id: 6,
-    category: "Exploring",
+    category: "How To",
     image: "/kamaz.png",
     title: "Convergent and divergent plate margins",
     author: "Isabelle O’Conner",
@@ -66,7 +64,7 @@ const posts = [
   },
   {
     id: 7,
-    category: "Exploring",
+    category: "Off Topic",
     image: "/beatiful.png",
     title: "Convergent and divergent plate margins",
     author: "Isabelle O’Conner",
@@ -96,11 +94,16 @@ const posts = [
   },
 ];
 
-const MaketPage = () => {
+const MaketPage = ({ activeFilter }) => {
+  const filteredPosts =
+    activeFilter === "All"
+      ? posts
+      : posts.filter((post) => post.category === activeFilter);
+
   return (
-    <div className="px-4 sm:px-6 md:px-16 lg:px-32 py-16 bg-gray-50 min-h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {posts.map((post) => (
+    <div className="px-4 sm:px-6 md:px-16 lg:px-0.5 py-16 bg-gray-50 min-h-screen">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-1xl mx-auto">
+        {filteredPosts.map((post) => (
           <div key={post.id} className="group">
             <div className="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-200 aspect-square">
               <img
