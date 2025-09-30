@@ -6,6 +6,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tripie</title>
   </head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Payment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Layout wrapper */
+    .settings-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      padding: 30px 20px;
+      background: #fff;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin: 15px 0;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .sidebar li:hover {
+      background: #f2f2f2;
+      color: #000;
+    }
+
+    .sidebar li.active {
+      background: #000;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Main content */
+    .container {
+      flex: 1;
+      padding: 40px;
+      background: #fafafa;
+    }
+
+    .container h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    /* Credit card title */
+    .credit-title {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .credit-title span.dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #28c840;
+      border-radius: 50%;
+    }
+
+    /* Saved card */
+    .saved-card {
+      background: #f5f7fa;
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .saved-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Card form */
+    .card-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 25px;
+    }
+
+    .card-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .card-box-header h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .card-box-header .logos img {
+      height: 22px;
+      margin-left: 8px;
+    }
+
+    .form-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+    }
+
+    /* Save button */
+    button.save-btn {
+      padding: 12px 32px;
+      border: none;
+      border-radius: 25px;
+      background: #28c840;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button.save-btn:hover {
+      background: #22a838;
+    }
+
+    /* Add payment method */
+    .add-method {
+      border: 2px dashed #bbb;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: #fff;
+    }
+
+    .add-method:hover {
+      border-color: #28c840;
+      color: #28c840;
+      background: #f9fdf9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .settings-wrapper {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .form-group {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <ul>
+        <li>User info</li>
+        <li>Account</li>
+        <li class="active">Payment</li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+      <h1>Setting</h1>
+
+      <div class="credit-title">
+        <span class="dot"></span>
+        Credit card
+      </div>
+
+      <!-- Saved card -->
+      <div class="saved-card">
+        <strong>Visa •••• 1667</strong>
+        Expiration: 03/2026
+      </div>
+
+      <!-- New card form -->
+      <div class="card-box">
+        <div class="card-box-header">
+          <h3>Add new credit card</h3>
+          <div class="logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+            <img src="./logo.svg" alt="Mastercard">
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Card Number" value="9224 6666 2236 8888">
+          <input type="text" placeholder="Card Holder" value="9224 6666 2236 8888">
+          <input type="text" placeholder="MM/YY">
+          <input type="text" placeholder="CVC">
+        </div>
+        <button class="save-btn">Save</button>
+      </div>
+
+      <!-- Add payment method -->
+      <div class="add-method">
+        + Add payment method
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

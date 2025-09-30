@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import DetailPage from "./components/DetailPage/DetailPage";
+import PaymentSettings from "./components/PaymentSettings/PaymentSettings";
 
-const App = () => {
+
+
+function App() {
   return (
-    <div>App</div>
-  )
+    <div className="App">
+      <DetailPage />
+      <PaymentSettings />
+    </div>
+  );
 }
 
-export default App
+export default App;
