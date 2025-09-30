@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import SignUpPage from "./pages/auth/SignUpPage";
 import SignInPage from "./pages/auth/SignInPage";
 import ConfirmCode from "./pages/auth/ConfirmCode";
@@ -9,8 +9,8 @@ import ContactPage from './pages/ContactPage/ContactPage'
 function App() {
   return (
     <>
-    <a href="/">Home</a>
-    <a href="/confirm">confirm</a>
+    <Link to="/">Home</Link>
+    <Link to="/confirm">confirm</Link>
     <Routes>
       <Route path="/" element={<h2>Home page</h2>} />
       <Route path="/signup" element={<SignUpPage />} />
