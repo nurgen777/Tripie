@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage/ContactPage'
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<h2>Home page</h2>} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/confirm" element={<ConfirmCode />} />
