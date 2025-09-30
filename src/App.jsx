@@ -1,3 +1,6 @@
+import React from "react";
+import DetailPage from "./components/DetailPage/DetailPage";
+import PaymentSettings from "./components/PaymentSettings/PaymentSettings";
 import { Routes, Route, Link } from "react-router-dom";
 import SignUpPage from "./pages/auth/SignUpPage";
 import SignInPage from "./pages/auth/SignInPage";
@@ -13,6 +16,8 @@ function App() {
     <Link to="/confirm">confirm</Link>
     <Routes>
       <Route path="/" element={<h2>Home page</h2>} />
+      <Route path="/payment" element={<PaymentSettings />} />
+      <Route path="/detail" element={<DetailPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/confirm" element={<ConfirmCode />} />
