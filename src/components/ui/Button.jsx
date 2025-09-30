@@ -1,12 +1,13 @@
-
-
-import React from 'react'
-
-const Button = (props) => {
-    const { children } = props;
+const Button = ({ children, onClick, className, type = "button" }) => {
   return (
-    <button className={props.className}> { children} </button>
-  )
-}
+    <button
+      type={type}
+      onClick={onClick}
+      className={className}
+    >
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;
