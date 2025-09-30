@@ -8,6 +8,9 @@ import ContactPage from './pages/ContactPage/ContactPage'
 
 function App() {
   return (
+    <>
+    <a href="/">Home</a>
+    <a href="/confirm">confirm</a>
     <Routes>
       <Route path="/" element={<h2>Home page</h2>} />
       <Route path="/signup" element={<SignUpPage />} />
@@ -17,6 +20,7 @@ function App() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/tours" element={<Tours />} />
     </Routes>
+    </>
   )
 }
 
