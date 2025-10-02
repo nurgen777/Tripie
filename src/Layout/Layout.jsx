@@ -4,7 +4,7 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { Globe, Menu, X } from "lucide-react"
 
-import Header from "../Header/Header"   
+import Header from "../Header/Header"
 import Boxcard from "../components/Boxcard/Boxcard"
 import Card from "../components/Card/Card"
 import PilotCard from "../components/PilotCard/PilotCard"
@@ -24,11 +24,11 @@ export default function Layout() {
 
   return (
     <div className="bg-white min-h-screen text-gray-800 flex flex-col">
-      
+
       {/* HEADER */}
       <header className="w-full shadow-sm border-b bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-          
+
           {/* LOGO */}
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="logo" className="w-8 h-8" />
@@ -82,23 +82,32 @@ export default function Layout() {
       {/* CONTENT */}
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <Header />
-        <Boxcard />
-        <Card />
-        <PilotCard />
-        <IconsCard />
-        <Kombo />
-        <Testimonials />
-        <VideoCard />
-        <AdvikeCard />
+        {/* OUTLET */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Outlet />
+        </div>
       </main>
 
       {/* FOOTER */}
       <Footer />
 
-      {/* OUTLET */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Outlet />
-      </div>
+
     </div>
+  )
+}
+
+
+export const HomePage = () => {
+  return (
+    <>
+      <Boxcard />
+      <Card />
+      <PilotCard />
+      <IconsCard />
+      <Kombo />
+      <Testimonials />
+      <VideoCard />
+      <AdvikeCard />
+    </>
   )
 }
